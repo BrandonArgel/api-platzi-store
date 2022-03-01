@@ -5,7 +5,11 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3005;
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://webpack-platzi-store.netlify.app',
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 const initialState = {
     cart: [],
